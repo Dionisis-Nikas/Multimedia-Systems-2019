@@ -6,7 +6,7 @@ import os
 # Neccesary initializations and video writer/reader configurations #
 ####################################################################
 
-video = cv2.VideoCapture("./original/outpy.avi")
+video = cv2.VideoCapture("../original_videos/outpy.avi")
 count = 0
 frames = []
 size = (int(video.get(cv2.CAP_PROP_FRAME_WIDTH)),
@@ -15,7 +15,7 @@ size = (int(video.get(cv2.CAP_PROP_FRAME_WIDTH)),
 fps = 25
 fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
 out = cv2.VideoWriter()
-success = out.open('./compressed/compressed_movie.avi',fourcc,fps,size)
+success = out.open('../final_videos/6.17/compressed_movie.avi',fourcc,fps,size)
 
 #################################
 # Read the Video frame by frame #
@@ -34,7 +34,6 @@ while success:
 ###############################################################################
 frames = np.array(frames)
 x,y,z,w = frames.shape
-print(frames.shape)
 print('Enter quantization parameter:')
 QP = int(input())
 while not(int(QP)):
@@ -58,7 +57,8 @@ for i in range (1, x-1):
 cv2.destroyAllWindows()
 out.release()
 print(count)
-before= os.path.getsize('./original/movie.avi')
-after = os.path.getsize('./compressed/compressed_movie.avi')
+before= os.path.getsize('../original_videos/outpy.avi')
+after = os.path.getsize('../final_videos/6.17/compressed_movie.avi')
 ratio = float(before/after)
+print("Video Compression is complete")
 print("The compression ratio is: ", ratio)

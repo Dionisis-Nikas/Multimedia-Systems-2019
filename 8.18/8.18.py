@@ -120,11 +120,7 @@ def ImageReconstruction(x, y,eikona2):
 #####################################################################################################
 
 
-def entropy(labels, base=None):
-    value, counts = np.unique(labels, return_counts=True)
-    return entropy(counts, base=base)
-
-cap = cv2.VideoCapture('./movie.avi')
+cap = cv2.VideoCapture('../original_videos/movie.avi')
 frameCount = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 frameWidth = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frameHeight = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -135,7 +131,7 @@ size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
 
 fps = 30
 fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
-out = cv2.VideoWriter('8.18.avi', fourcc , fps , size ,False)
+out = cv2.VideoWriter('../final_videos/8.18/8.18.avi', fourcc , fps , size ,False)
 fc = 0
 ret, r_frame = cap.read()
 r_frame = cv2.cvtColor(r_frame, cv2.COLOR_BGR2GRAY)
@@ -179,14 +175,7 @@ while cap.isOpened():
 
     out.write(eikona4)
 
-    try:
-        image = eikona4
-        print(' Entropy of ' +str(fc)+ ' = ' + str(entropy(image)))
 
-        buf.append(image.astype('int16')) #see "continue" at line 16
-        fc = fc + 1
-    except :
-        continue #it stores the dtype for some reason and we don't want that
 
 
 
