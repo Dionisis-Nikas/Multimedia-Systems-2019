@@ -1,18 +1,8 @@
-import numpy as np
-import cv2
-from PIL import Image
-import matplotlib.pyplot as plt
 from scipy.stats import entropy
 import numpy as np
 import cv2
-import time
 
-
-
-
-def entropy(labels, base=None):
-  value,counts = np.unique(labels, return_counts=True)
-  return entropy(counts, base=base)
+#####################################################################################################
 
 def macroblocksMaker(row_size, column_size, array): #returns an array with the image divided into macroblocks
     blocks=[]
@@ -23,15 +13,7 @@ def macroblocksMaker(row_size, column_size, array): #returns an array with the i
     blocks=np.array(blocks)
     return blocks
 
-
-def estimateMotion(array):
-    array=np.array(array)
-    x, y = array.shape
-    num_of_zeros = x*y - np.count_nonzero(array) #count the number of zeroes in the given image
-    if (num_of_zeros >= 0.8 * x * y): #if the given array is at least 80% of zeroes then no motion is detected
-        return(0)
-    else:
-        return(1)
+#####################################################################################################
 
 def SAD(im1,im2,block):
     i = block
@@ -69,8 +51,6 @@ def SAD(im1,im2,block):
 
     return min_block
 
-
-
 def sumAbsoluteDifferences(macro1, macro2):
     sad = 0
     n = macro1.shape[0]
@@ -78,6 +58,9 @@ def sumAbsoluteDifferences(macro1, macro2):
         for j in range(n):
             sad += abs(int(macro1[i, j]) - int(macro2[i, j]))
     return sad
+
+#####################################################################################################
+
 
 def round_number(size, i):
     return ((i - 1) // size + 1) * size
@@ -98,6 +81,22 @@ def fillWithBlackLines(image):
 def black_pixel():
     return [0]
 
+
+
+#####################################################################################################
+
+def level_analysis(source, target):
+    source=np.array(source)
+    target=np.array(target)
+    global hierimg1
+    global hierimg2
+    #we create 2 new images based on the original with lower resolutions to start searching on smaller blocks for faster discalification of blocks
+    for i in range(2):
+        hierimg1 = hierimg1 + [hierarchicalDiv(source)]
+        source =hierarchicalDiv(source)
+        hierimg2 = hierimg2 + [hierarchicalDiv(target)]
+        target =hierarchicalDiv(target)
+
 def hierarchicalDiv(array):
     array=np.array(array)
     x, y = array.shape
@@ -112,20 +111,40 @@ def hierarchicalDiv(array):
     hierarchicalImage=np.reshape(hierarchicalImage, (int(x/2), int(y/2))) #dimensions we want
     return(hierarchicalImage)
 
+#####################################################################################################
 
-def findTheDifferences(source, target):
-    source=np.array(source)
-    target=np.array(target)
-    global hierimg1
-    global hierimg2
-    #we create 2 new images based on the original with lower resolutions to start searching on smaller blocks for faster discalification of blocks
-    for i in range(2):
-        hierimg1 = hierimg1 + [hierarchicalDiv(source)]
-        source =hierarchicalDiv(source)
-        hierimg2 = hierimg2 + [hierarchicalDiv(target)]
-        target =hierarchicalDiv(target)
 
-def ImageReconstrucrion(x, y,eikona2):
+
+#####################################################################################################
+
+def improveDeeperLevels(blockakia,hierimg1,hierimg2):
+    l = [8,16]
+    for k in range(2):
+        eikona1 = macroblocksMaker(l[k],l[k],hierimg1[1-k])#we divide the smallest image into lxl blocks
+        eikona2 = macroblocksMaker(l[k],l[k],hierimg2[1-k])#we divide the smallest image into lxl blocks
+        to_be_checked = []
+        for i in range(len(blockakia)):#we will only check the blocks we saw movement in the previous hierarchical step
+            if estimateMotion(eikona1[blockakia[i]]-eikona2[blockakia[i]]):
+                continue #if there is still movement check next block
+            else:
+                to_be_checked = to_be_checked + [i]#if there is no movement then save the index of the block that will later be poppes from the list
+        blockakia = [x for x in blockakia if x not in to_be_checked]#pop unwanted blocks
+    return(eikona1, eikona2 ,blockakia)
+
+def estimateMotion(array):
+    array=np.array(array)
+    x, y = array.shape
+    num_of_zeros = x*y - np.count_nonzero(array) #count the number of zeroes in the given image
+    if (num_of_zeros >= 0.8 * x * y): #if the given array is at least 80% of zeroes then no motion is detected
+        return(0)
+    else:
+        return(1)
+
+#####################################################################################################
+
+#####################################################################################################
+
+def ImageReconstruction(x, y,eikona2):
     r=1
     #we add lines of blocks on top of each other to create the image
     for i in range(x):
@@ -143,33 +162,14 @@ def ImageReconstrucrion(x, y,eikona2):
             showim = np.concatenate((showim,output),axis=0)
     return(showim)#return reconstructed image
 
-
-def FindMovingBlocks(blockakia,hierimg1,hierimg2):
-    l = [8,16]
-    for k in range(2):
-        eikona1 = macroblocksMaker(l[k],l[k],hierimg1[1-k])#we divide the smallest image into lxl blocks
-        eikona2 = macroblocksMaker(l[k],l[k],hierimg2[1-k])#we divide the smallest image into lxl blocks
-        to_be_checked = []
-        for i in range(len(blockakia)):#we will only check the blocks we saw movement in the previous hierarchical step
-            if estimateMotion(eikona1[blockakia[i]]-eikona2[blockakia[i]]):
-                continue #if there is still movement check next block
-            else:
-                to_be_checked = to_be_checked + [i]#if there is no movement then save the index of the block that will later be poppes from the list
-        blockakia = [x for x in blockakia if x not in to_be_checked]#pop unwanted blocks
-    return(eikona1, eikona2 ,blockakia)
+#####################################################################################################
 
 
+def entropy(labels, base=None):
+    value, counts = np.unique(labels, return_counts=True)
+    return entropy(counts, base=base)
 
-
-
-
-
-
-
-
-
-
-cap = cv2.VideoCapture('movie.avi')
+cap = cv2.VideoCapture('./original/movie.avi')
 frameCount = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 frameWidth = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frameHeight = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -197,21 +197,19 @@ while cap.isOpened():
     c_frame = cv2.cvtColor(c_frame, cv2.COLOR_BGR2GRAY)
     hierimg1 = [r_frame]
     hierimg2 = [c_frame]
-    findTheDifferences(r_frame,c_frame)
+    level_analysis(r_frame,c_frame)
     eikona1 = macroblocksMaker(4, 4, hierimg1[2])
     eikona2 = macroblocksMaker(4, 4, hierimg2[2])
     blockakia = []  # whick blocks show movement
     for i in range(len(eikona1)):
         if estimateMotion(eikona1[i] - eikona2[i]):
             blockakia = blockakia + [i]  # if movement then append the index of the block
-    eikona1, eikona2, blockakia = FindMovingBlocks(blockakia, hierimg1, hierimg2)
+    eikona1, eikona2, blockakia = improveDeeperLevels(blockakia, hierimg1, hierimg2)
     eikona3 = eikona2
     for i in range(len(blockakia)):
         predicted = SAD(eikona1,eikona2,blockakia[i])
         eikona1[blockakia[i]] = eikona1[predicted]
-    #for i in range(eikona1.shape[0]):
-     #   predicted = SAD(eikona1,eikona2,i)
-      #  eikona1[i] = eikona1[predicted]
+
 
 
 
@@ -219,13 +217,13 @@ while cap.isOpened():
     x = int(c_frame.shape[0] / 16)
 
 
-    eikona4 = ImageReconstrucrion(x,y,np.uint8(np.subtract(eikona2,eikona1)))
+    eikona4 = ImageReconstruction(x,y,np.uint8(np.subtract(eikona2,eikona1)))
 
 
 
     r_frame = c_frame
     out.write(eikona4)
-
+    print("Frame "+str(fc))
     try:
         image = eikona4
         print(' Entropy of ' +str(fc)+ ' = ' + str(entropy(image)))
@@ -235,7 +233,7 @@ while cap.isOpened():
     except :
         continue #it stores the dtype for some reason and we don't want that
     r_frame = c_frame
-print('The video "8b.avi" ha been added/updated in your run folder.'+ '\n entropy = '+ str(entropy(buf)))
+
 
 cap.release()
 out.release()

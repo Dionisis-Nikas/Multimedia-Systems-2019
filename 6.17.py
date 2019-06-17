@@ -1,11 +1,10 @@
 import cv2
 import numpy as np
 import os
-from matplotlib.image import imread
 
-#################################
-# Read the Video frame by frame #
-#################################
+####################################################################
+# Neccesary initializations and video writer/reader configurations #
+####################################################################
 
 video = cv2.VideoCapture("./original/outpy.avi")
 count = 0
@@ -17,6 +16,10 @@ fps = 25
 fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
 out = cv2.VideoWriter()
 success = out.open('./compressed/compressed_movie.avi',fourcc,fps,size)
+
+#################################
+# Read the Video frame by frame #
+#################################
 while success:
     try:
           success, image = video.read()
@@ -25,20 +28,26 @@ while success:
     except:
         continue
 
-  ##print('Read a new frame: ', success, image)
 
+###############################################################################
+# Convert list of images to numpy array for easier calculations with matrices #
+###############################################################################
 frames = np.array(frames)
-print(frames.shape)
 x,y,z,w = frames.shape
+print(frames.shape)
+print('Enter quantization parameter:')
+QP = int(input())
+while not(int(QP)):
+    QP = int(input())
+    print('Enter quantization parameter:')
 
-QP = 2
 
 for i in range(1, x):
 
     # Array of differences
     frames[i,:,:,:] = frames[i,:,:,] - frames[i-1,:,:,:]
 
-    #Round any possible decimals to the nearest integer then quantize it
+    #Round the decimals to the nearest integer then quantize it with the quantization parameter from input
     frames[i,:,:,:] = np.rint(np.divide(frames[i,:,:,:],QP))
 
 #Reconstruct the frames to output the compressed video
@@ -48,9 +57,8 @@ for i in range (1, x-1):
 
 cv2.destroyAllWindows()
 out.release()
-
+print(count)
 before= os.path.getsize('./original/movie.avi')
-after = os.path.getsize('./compressed/compressed_movie.mp4')
+after = os.path.getsize('./compressed/compressed_movie.avi')
 ratio = float(before/after)
-print("The compress ration is: ", ratio)
-print("Your video is now in the same folder as the program!")
+print("The compression ratio is: ", ratio)
