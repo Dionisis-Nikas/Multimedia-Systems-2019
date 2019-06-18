@@ -36,9 +36,9 @@ frames = np.array(frames)
 x,y,z,w = frames.shape
 print('Enter quantization parameter:')
 QP = int(input())
-while not(int(QP)):
-    QP = int(input())
+while not(int(QP)) or (int(QP)<=0):
     print('Enter quantization parameter:')
+    QP = int(input())
 
 
 for i in range(1, x):

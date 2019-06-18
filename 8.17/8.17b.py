@@ -117,19 +117,19 @@ def hierarchicalDiv(array):
 
 #####################################################################################################
 
-def improveDeeperLevels(blockakia,hierimg1,hierimg2):
+def improveDeeperLevels(movement_blocks,hierimg1,hierimg2):
     l = [8,16]
     for k in range(2):
         eikona1 = macroblocksMaker(l[k],l[k],hierimg1[1-k])#we divide the smallest image into lxl blocks
         eikona2 = macroblocksMaker(l[k],l[k],hierimg2[1-k])#we divide the smallest image into lxl blocks
         to_be_checked = []
-        for i in range(len(blockakia)):#we will only check the blocks we saw movement in the previous hierarchical step
-            if estimateMotion(eikona1[blockakia[i]]-eikona2[blockakia[i]]):
+        for i in range(len(movement_blocks)):#we will only check the blocks we saw movement in the previous hierarchical step
+            if estimateMotion(eikona1[movement_blocks[i]]-eikona2[movement_blocks[i]]):
                 continue #if there is still movement check next block
             else:
                 to_be_checked = to_be_checked + [i]#if there is no movement then save the index of the block that will later be poppes from the list
-        blockakia = [x for x in blockakia if x not in to_be_checked]#pop unwanted blocks
-    return(eikona1, eikona2 ,blockakia)
+        movement_blocks = [x for x in movement_blocks if x not in to_be_checked]#pop unwanted blocks
+    return(eikona1, eikona2 ,movement_blocks)
 
 def estimateMotion(array):
     array=np.array(array)
@@ -200,15 +200,15 @@ while cap.isOpened():
     level_analysis(r_frame,c_frame)
     eikona1 = macroblocksMaker(4, 4, hierimg1[2])
     eikona2 = macroblocksMaker(4, 4, hierimg2[2])
-    blockakia = []  # whick blocks show movement
+    movement_blocks = []  # whick blocks show movement
     for i in range(len(eikona1)):
         if estimateMotion(eikona1[i] - eikona2[i]):
-            blockakia = blockakia + [i]  # if movement then append the index of the block
-    eikona1, eikona2, blockakia = improveDeeperLevels(blockakia, hierimg1, hierimg2)
+            movement_blocks = movement_blocks + [i]  # if movement then append the index of the block
+    eikona1, eikona2, movement_blocks = improveDeeperLevels(movement_blocks, hierimg1, hierimg2)
     eikona3 = eikona2
-    for i in range(len(blockakia)):
-        predicted = SAD(eikona1,eikona2,blockakia[i])
-        eikona1[blockakia[i]] = eikona1[predicted]
+    for i in range(len(movement_blocks)):
+        predicted = SAD(eikona1,eikona2,movement_blocks[i])
+        eikona1[movement_blocks[i]] = eikona1[predicted]
 
 
 
@@ -227,10 +227,10 @@ while cap.isOpened():
     try:
         image = eikona4
 
-        buf.append(image.astype('int16')) #see "continue" at line 16
+        buf.append(image.astype('int16'))
         fc = fc + 1
     except :
-        continue #it stores the dtype for some reason and we don't want that
+        continue
     r_frame = c_frame
 
 print('The video has been created.'+ '\n entropy = '+ str(entropy1(buf)))
