@@ -1,7 +1,7 @@
 from scipy.stats import entropy
 import numpy as np
 import cv2
-
+κκκκκκκκκ
 #####################################################################################################
 
 def macroblocksMaker(row_size, column_size, array): #returns an array with the image divided into macroblocks
