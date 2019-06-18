@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ea049f8-66d7-45e7-8fad-0bd9e45965f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/6.16/doc.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/6.17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.17a.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.17b.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.18/8.18.py" beforeDir="false" afterPath="$PROJECT_DIR$/8.18/8.18.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.18/doc.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.18/output.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.18/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6.16/decoder_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6.17/6.17.py" beforeDir="false" afterPath="$PROJECT_DIR$/6.17/6.17.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_videos/6.17/compressed_movie.avi" beforeDir="false" afterPath="$PROJECT_DIR$/final_videos/6.17/compressed_movie.avi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/original_videos/outpy.avi" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +27,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/6.17/6.17.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state relative-caret-position="885">
+              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/6.16/6.16.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="87" column="23" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/8.17/8.17a.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="3" selection-start-line="39" selection-end-line="40" />
+            <state relative-caret-position="315">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -55,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/8.17/8.17b.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
-              <caret line="167" column="12" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
+            <state relative-caret-position="190">
+              <caret line="223" column="21" selection-start-line="223" selection-start-column="21" selection-end-line="223" selection-end-column="21" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -67,19 +75,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/6.16/decoder_image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -98,21 +101,12 @@
         <option value="$PROJECT_DIR$/8.17b.py" />
         <option value="$PROJECT_DIR$/6.17.py" />
         <option value="$PROJECT_DIR$/8.17a.py" />
-        <option value="$PROJECT_DIR$/6.17/6.17.py" />
         <option value="$PROJECT_DIR$/8.17/8.17a.py" />
-        <option value="$PROJECT_DIR$/8.17/8.17b.py" />
         <option value="$PROJECT_DIR$/8.18/8.18.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/Multimedia-Systems-2019.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/other.xml" />
+        <option value="$PROJECT_DIR$/8.17/8.17b.py" />
+        <option value="$PROJECT_DIR$/mm.py" />
+        <option value="$PROJECT_DIR$/6.16/6.16.py" />
+        <option value="$PROJECT_DIR$/6.17/6.17.py" />
       </list>
     </option>
   </component>
@@ -158,6 +152,12 @@
               <item name="Multimedia-Systems-2019" type="462c0819:PsiDirectoryNode" />
               <item name="final_videos" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Multimedia-Systems-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Multimedia-Systems-2019" type="462c0819:PsiDirectoryNode" />
+              <item name="final_videos" type="462c0819:PsiDirectoryNode" />
+              <item name="6.17" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -167,6 +167,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -188,7 +189,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.8.17b (1)">
+  <component name="RunManager" selected="Python.6.16">
+    <configuration name="6.16" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Multimedia-Systems-2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6.16" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6.16/6.16.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="6.17 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Multimedia-Systems-2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,28 +226,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6.17/6.17.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="6.17" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Multimedia-Systems-2019" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6.17.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -277,7 +278,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="8.18" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Multimedia-Systems-2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -285,12 +286,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/8.18" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/8.18/8.18.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -301,11 +302,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.6.16" />
+        <item itemvalue="Python.6.17 (1)" />
+        <item itemvalue="Python.mm" />
         <item itemvalue="Python.8.17b (1)" />
         <item itemvalue="Python.8.17a" />
-        <item itemvalue="Python.8.18" />
-        <item itemvalue="Python.6.17 (1)" />
-        <item itemvalue="Python.6.17" />
       </list>
     </recent_temporary>
   </component>
@@ -321,22 +322,22 @@
       <updated>1560616870495</updated>
       <workItem from="1560616875650" duration="3543000" />
       <workItem from="1560692371702" duration="5546000" />
-      <workItem from="1560774644422" duration="2467000" />
+      <workItem from="1560774644422" duration="5545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11556000" />
+    <option name="totallyTimeSpent" value="14634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3292517" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3292517" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -360,11 +361,13 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$decoder_image.coverage" NAME="decoder_image Coverage Results" MODIFIED="1560622023572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6.16" />
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$8_17b__1_.coverage" NAME="8.17b (1) Coverage Results" MODIFIED="1560779209058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/8.17" />
+    <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$6_16.coverage" NAME="6.16 Coverage Results" MODIFIED="1560864947711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6.16" />
+    <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$mm.coverage" NAME="mm Coverage Results" MODIFIED="1560792704674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$8_17b.coverage" NAME="8.17b Coverage Results" MODIFIED="1560732617746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$6_17.coverage" NAME="6.17 Coverage Results" MODIFIED="1560775137993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$8_18.coverage" NAME="8.18 Coverage Results" MODIFIED="1560779110095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/8.18" />
     <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$8_17a.coverage" NAME="8.17a Coverage Results" MODIFIED="1560779185011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/8.17" />
-    <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$6_17__1_.coverage" NAME="6.17 (1) Coverage Results" MODIFIED="1560778156240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6.17" />
+    <SUITE FILE_PATH="coverage/Multimedia_Systems_2019$6_17__1_.coverage" NAME="6.17 (1) Coverage Results" MODIFIED="1560862016746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6.17" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.py" />
@@ -408,26 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/6.17/6.17.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/8.17/8.17a.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="3" selection-start-line="39" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/8.18/8.18.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -440,10 +423,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/8.17/8.17b.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="167" column="12" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
+        <state relative-caret-position="190">
+          <caret line="223" column="21" selection-start-line="223" selection-start-column="21" selection-end-line="223" selection-end-column="21" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8.17/8.17a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6.16/6.16.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="87" column="23" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6.17/6.17.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>

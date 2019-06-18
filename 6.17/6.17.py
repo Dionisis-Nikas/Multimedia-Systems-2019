@@ -6,13 +6,13 @@ import os
 # Neccesary initializations and video writer/reader configurations #
 ####################################################################
 
-video = cv2.VideoCapture("../original_videos/outpy.avi")
+video = cv2.VideoCapture("../original_videos/movie2.avi")
 count = 0
 frames = []
 size = (int(video.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(video.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
-fps = 25
+fps = 30
 fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
 out = cv2.VideoWriter()
 success = out.open('../final_videos/6.17/compressed_movie.avi',fourcc,fps,size)
@@ -57,7 +57,7 @@ for i in range (1, x-1):
 cv2.destroyAllWindows()
 out.release()
 print(count)
-before= os.path.getsize('../original_videos/outpy.avi')
+before= os.path.getsize('../original_videos/movie2.avi')
 after = os.path.getsize('../final_videos/6.17/compressed_movie.avi')
 ratio = float(before/after)
 print("Video Compression is complete")
