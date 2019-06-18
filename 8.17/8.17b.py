@@ -135,7 +135,7 @@ def estimateMotion(array):
     array=np.array(array)
     x, y = array.shape
     num_of_zeros = x*y - np.count_nonzero(array) #count the number of zeroes in the given image
-    if (num_of_zeros >= 0.8 * x * y): #if the given array is at least 80% of zeroes then no motion is detected
+    if (num_of_zeros >= 0.9 * x * y): #if the given array is at least 80% of zeroes then no motion is detected
         return(0)
     else:
         return(1)
